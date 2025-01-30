@@ -82,21 +82,39 @@ fee = st.sidebar.slider("Additional Fee (%)", 0, 100, 0)
 order = {}
 cols = st.columns(2)
 
-# First Column - Food
+# First Column - Mains & Desserts
 with cols[0]:
-    st.subheader("🍽️ Food")
-    for item, price in menu["Food"].items():
+    st.subheader("🍽️ Mains")
+    for item, price in menu["Mains"].items():
         quantity = st.number_input(f"{item} (${price})", min_value=0, max_value=500, step=1, key=item)
         if quantity > 0:
-            order[("Food", item)] = quantity
+            order[("Mains", item)] = quantity
+    
+    st.subheader("🍰 Desserts")
+    for item, price in menu["Desserts"].items():
+        quantity = st.number_input(f"{item} (${price})", min_value=0, max_value=500, step=1, key=item)
+        if quantity > 0:
+            order[("Desserts", item)] = quantity
 
-# Second Column - Drinks
+# Second Column - Teas & Coffee
 with cols[1]:
-    st.subheader("🥤 Drinks")
-    for item, price in menu["Drinks"].items():
+    st.subheader("🧋 Bubble Teas")
+    for item, price in menu["Bubble Teas"].items():
         quantity = st.number_input(f"{item} (${price})", min_value=0, max_value=500, step=1, key=item)
         if quantity > 0:
-            order[("Drinks", item)] = quantity
+            order[("Bubble Teas", item)] = quantity
+    
+    st.subheader("🍵 Regular Teas")
+    for item, price in menu["Regular Teas"].items():
+        quantity = st.number_input(f"{item} (${price})", min_value=0, max_value=500, step=1, key=item)
+        if quantity > 0:
+            order[("Regular Teas", item)] = quantity
+    
+    st.subheader("☕ Coffee")
+    for item, price in menu["Coffee"].items():
+        quantity = st.number_input(f"{item} (${price})", min_value=0, max_value=500, step=1, key=item)
+        if quantity > 0:
+            order[("Coffee", item)] = quantity
 
 if st.button("Calculate Total"):
     subtotal, total_price = calculate_total(order, discount=discount, fee=fee)
