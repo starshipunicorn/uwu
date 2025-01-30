@@ -44,6 +44,7 @@ menu = {
     "Bubble Teas": {
         "bubble tea blue berry": 64,
         "bubble tea mint": 64,
+        "classic uwu tea": 39,
         "bubble tea rose": 64,
     },
     "Regular Teas": {
@@ -55,11 +56,13 @@ menu = {
         "blueberry tea": 33,
         "matcha tea": 33,
         "choco tea": 33,
-        "peach iced tea": 33,
-        "classic uwu tea": 39,
+        "peach iced tea": 33
     },
     "Coffee": {
-     "iced coffee": 33,
+        "iced coffee": 33,
+    },
+    "Special Items": {
+        "shitter litter": 170,
     }
 }
 
@@ -82,7 +85,7 @@ fee = st.sidebar.slider("Additional Fee (%)", 0, 100, 0)
 order = {}
 cols = st.columns(2)
 
-# First Column - Mains & Desserts
+# First Column - Mains, Desserts & Coffee
 with cols[0]:
     st.subheader("🍽️ Mains")
     for item, price in menu["Mains"].items():
@@ -95,8 +98,14 @@ with cols[0]:
         quantity = st.number_input(f"{item} (${price})", min_value=0, max_value=500, step=1, key=item)
         if quantity > 0:
             order[("Desserts", item)] = quantity
+    
+    st.subheader("☕ Coffee")
+    for item, price in menu["Coffee"].items():
+        quantity = st.number_input(f"{item} (${price})", min_value=0, max_value=500, step=1, key=item)
+        if quantity > 0:
+            order[("Coffee", item)] = quantity
 
-# Second Column - Teas & Coffee
+# Second Column - Teas & Special Items
 with cols[1]:
     st.subheader("🧋 Bubble Teas")
     for item, price in menu["Bubble Teas"].items():
@@ -110,11 +119,11 @@ with cols[1]:
         if quantity > 0:
             order[("Regular Teas", item)] = quantity
     
-    st.subheader("☕ Coffee")
-    for item, price in menu["Coffee"].items():
+    st.subheader("✨ Special Items")
+    for item, price in menu["Special Items"].items():
         quantity = st.number_input(f"{item} (${price})", min_value=0, max_value=500, step=1, key=item)
         if quantity > 0:
-            order[("Coffee", item)] = quantity
+            order[("Special Items", item)] = quantity
 
 if st.button("Calculate Total"):
     subtotal, total_price = calculate_total(order, discount=discount, fee=fee)
