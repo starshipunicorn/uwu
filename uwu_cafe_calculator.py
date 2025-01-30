@@ -28,31 +28,38 @@ st.markdown(
 
 # UWU Cat Cafe Menu with Prices
 menu = {
-    "Food": {
-        "uwu sushi": 116,
+    "Mains": {
+        "sushi": 116,
         "buddha bowl": 124,
         "miso soup": 88,
-        "uwu pancake": 84,
+    },
+     "Desserts": {
         "kitty doughnut": 69,
         "kitty brownie": 63,
         "kitty cupcake": 69,
+        "pancake": 84,
         "chocolate sandy": 78,
         "vanilla sandy": 78
     },
-    "Drinks": {
+    "Bubble Teas": {
+        "bubble tea blue berry": 64,
+        "bubble tea mint": 64,
+        "classic uwu tea": 39,
+        "bubble tea rose": 64,
+    },
+    "Regular Teas": {
         "black tea": 20,
         "lemon lime iced tea": 33,
         "green tea": 25,
-        "bubble tea blue berry": 64,
         "strawberry lemonade": 36,
-        "bubble tea mint": 64,
         "classic uwu tea": 39,
         "blueberry tea": 33,
-        "bubble tea rose": 64,
-        "iced coffee": 33,
         "matcha tea": 33,
         "choco tea": 33,
         "peach iced tea": 33
+    },
+    "Coffee": {
+     "iced coffee": 33,
     }
 }
 
