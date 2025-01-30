@@ -55,7 +55,7 @@ menu = {
         "blueberry tea": 33,
         "matcha tea": 33,
         "choco tea": 33,
-        "peach iced tea": 33
+        "peach iced tea": 33,
         "classic uwu tea": 39,
     },
     "Coffee": {
