@@ -44,7 +44,6 @@ menu = {
     "Bubble Teas": {
         "bubble tea blue berry": 64,
         "bubble tea mint": 64,
-        "classic uwu tea": 39,
         "bubble tea rose": 64,
     },
     "Regular Teas": {
@@ -56,7 +55,8 @@ menu = {
         "blueberry tea": 33,
         "matcha tea": 33,
         "choco tea": 33,
-        "peach iced tea": 33
+        "peach iced tea": 33,
+         "classic uwu tea": 39,
     },
     "Coffee": {
         "iced coffee": 33,
